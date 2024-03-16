@@ -139,11 +139,13 @@ $title-size: 2.76rem;
                 margin-bottom: 25px;
                 font-size: 3.38rem;
                 line-height: 1.2;
+                white-space: nowrap;
             }
 
             &:nth-child(2) {
                 font-weight: 300;
                 margin-bottom: 60px;
+                white-space: nowrap;
             }
         }
 
@@ -163,6 +165,10 @@ $title-size: 2.76rem;
 
 .swiper1 {
     position: relative;
+
+    .slideMiniImg {
+        display: none;
+    }
 
     .swiper-pagination {
         bottom: 35px;
@@ -207,17 +213,11 @@ $title-size: 2.76rem;
         position: relative;
         margin-bottom: 48px;
 
-        .introTitle, .introConLine, .introDescript {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-        }
-
         .introTitle {
             top: 30px;
             font-size: $title-size;
             transition: all 700ms ease;
+            white-space: nowrap;
         }
 
         .introConLine {
@@ -235,6 +235,7 @@ $title-size: 2.76rem;
             font-weight: 300;
             line-height: 30px;
             transition: all 700ms ease 500ms;
+            white-space: nowrap;
         }
     }
 
@@ -275,9 +276,11 @@ $title-size: 2.76rem;
             cursor: pointer;
             transition: all 200ms ease;
 
-            &:hover {
-                color: white;
-                background-color: $main-color;
+            @media (hover: hover) {
+                &:hover {
+                    color: white;
+                    background-color: $main-color;
+                }
             }
         }
     }
@@ -309,9 +312,11 @@ $title-size: 2.76rem;
                     transition: all 300ms ease;
                 }
 
-                &:hover .newCartBtn {
-                    bottom: 0;
-                    opacity: 1;
+                @media (hover: hover) {
+                    &:hover .newCartBtn {
+                        bottom: 0;
+                        opacity: 1;
+                    }
                 }
     
                 img {
@@ -368,8 +373,10 @@ $title-size: 2.76rem;
             transition: all 300ms ease;
         }
 
-        &:hover img {
-            transform: scale(1.05);
+        @media (hover: hover) {
+            &:hover img {
+                transform: scale(1.05);
+            }
         }
 
         p {
@@ -383,49 +390,44 @@ $title-size: 2.76rem;
     }
 }
 
-/* Instagram */
-.instaWrap {
-    position: relative;
+/* Event */
+.eventWrap {
     padding: 100px 70px;
-    background-color: $lightGray;
 
-    .instaTitle {
-        margin-bottom: 50px;
-        text-align: center;
+    .eventBox {
+        position: relative;
+        cursor: pointer;
 
-        p:first-child {
-            color: $darkGray;
-            font-weight: 300;
-            font-size: $menu-size;
+        .eventMainImg, .eventMiniImg {
+            width: 100%;
+            display: block;
+            filter: brightness(0.4);
+            transition: all 300ms ease;
         }
 
-        p:last-child {
-            font-size: $title-size;
+        .eventMiniImg {
+            display: none;
         }
-    }
 
-    .swiper2 {
-        .swiper-wrapper {
-            transition-timing-function: linear;
+        .eventTitle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-            .swiper-slide {
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-use-select: none;
-                user-select: none;
-                cursor: pointer;
-                transition: all 300ms ease;
+            p {
+                text-align: center;
+                color: white;
+
+                &:last-child {
+                    font-size: $title-size;
+                }
             }
         }
 
-        .swiper-scrollbar {
-            height: 1.5px;
-            position: static;
-            margin-top: 25px;
-            background-color: #ececec;
-
-            span {
-                background-color: $darkGray;
+        @media (hover: hover) {
+            &:hover img {
+                filter: brightness(0.2);
             }
         }
     }
@@ -436,6 +438,7 @@ $title-size: 2.76rem;
     padding: 56px 70px 100px 70px;
     display: flex;
     justify-content: space-between;
+    background-color: $lightGray;
 
     .footBrand {
         .brandLogo {
@@ -547,6 +550,248 @@ $title-size: 2.76rem;
 
         .infoCompany .footCon {
             line-height: 27px;
+        }
+    }
+}
+
+
+/* Media Query */
+@media (max-width: 1441px) {
+    .footerWrap .footInfo .infoInter {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1296px) {
+    .footerWrap {
+        flex-direction: column;
+
+        .footBrand {
+            margin-bottom: 56px;
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    * {
+        font-size: 12px;
+    }
+
+    .swiper-slide .slideContent {
+        p:nth-child(2) {
+            margin-bottom: 45px;
+        }
+
+        .slideMoreBtn {
+            width: 145px;
+            height: 45px;
+            line-height: 45px;
+        }
+    }
+
+    .newWrap ul li .newThumb .newCartBtn {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .footerWrap .footInfo {
+        flex-direction: column;
+
+        .infoInter {
+            margin: 0 0 20px 0;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    * {
+        font-size: 11px;
+    }
+
+    .headerWrap {
+        height: 70px;
+        padding: 0 40px;
+
+        .headLogo img {
+            width: 150px;
+        }
+
+        .headCustomerMenu {
+            .customerIcon {
+                .cusSearch, .cusCart {
+                    margin-right: 20px;
+                }
+            }
+            
+            .customerLog {
+                display: none;
+            }
+        }
+    }
+
+    .swiper1 {
+        .swiper-slide {
+            .slideOriginImg {
+                display: none;
+            }
+
+            .slideMiniImg {
+                display: block;
+            }
+        
+            .slideContent .slideMoreBtn {
+                width: 120px;
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+
+        .swiper-pagination {
+            bottom: 20px;
+
+            span {
+                width: 5px;
+                height: 5px;
+            }
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            background-size: 13px;
+        }
+
+        .swiper-button-prev {
+            left: 40px;
+        }
+
+        .swiper-button-next {
+            right: 40px;
+        }
+    }
+
+    .introWrap {
+        padding: 70px 40px;
+
+        img {
+            width: 100%
+        }
+    }
+
+    .newWrap {
+        padding: 70px 40px;
+
+        ul {
+            flex-wrap: wrap;
+
+            li {
+                width: 49%;
+
+                &:nth-child(1), &:nth-child(2) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .newTitle .newTitleBtn {
+            width: 100px;
+            height: 35px;
+            margin-bottom: 7px;
+            line-height: 35px; 
+        }
+    }
+
+    .bestWrap {
+        flex-direction: column;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .eventWrap {
+        padding: 70px 40px;
+
+        .eventBox {
+            .eventMiniImg {
+                display: block;
+            }
+
+            .eventMainImg {
+                display: none;
+            }
+        }
+    }
+
+    .footerWrap {
+        padding: 56px 40px 100px 40px;
+
+        .footInfo .footTitle {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    * {
+        font-size: 9px;
+    }
+
+    .headerWrap {
+        padding: 0 20px;
+
+        .headMenu .headMenuText {
+            display: none;
+        }
+    
+        .headCustomerMenu {
+            display: none;
+        }
+    }
+
+    .swiper1 {
+        .swiper-slide .slideContent p:nth-child(1) {
+            font-size: 3rem;
+        }
+
+        .swiper-button-next {
+            right: 20px;
+        }
+
+        .swiper-button-prev {
+            left: 20px;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            background-size: 10px;
+        }
+    }
+
+    .introWrap {
+        padding: 50px 20px;
+
+        .introCon {
+            margin-bottom: 30px;
+        }
+    }
+
+    .newWrap {
+        padding: 50px 20px;
+
+        .newTitle .newTitleBtn {
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+
+    .bestWrap div p {
+        bottom: 30px;
+    }
+
+    .eventWrap {
+        padding: 50px 20px;
+
+        .eventBox .eventTitle p:last-child {
+            font-size: 2rem;
         }
     }
 }

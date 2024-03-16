@@ -110,10 +110,12 @@
   margin-bottom: 25px;
   font-size: 3.38rem;
   line-height: 1.2;
+  white-space: nowrap;
 }
 .swiper-slide .slideContent p:nth-child(2) {
   font-weight: 300;
   margin-bottom: 60px;
+  white-space: nowrap;
 }
 .swiper-slide .slideContent .slideMoreBtn {
   width: 162px;
@@ -129,6 +131,9 @@
 
 .swiper1 {
   position: relative;
+}
+.swiper1 .slideMiniImg {
+  display: none;
 }
 .swiper1 .swiper-pagination {
   bottom: 35px;
@@ -166,16 +171,11 @@
   position: relative;
   margin-bottom: 48px;
 }
-.introWrap .introCon .introTitle, .introWrap .introCon .introConLine, .introWrap .introCon .introDescript {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-}
 .introWrap .introCon .introTitle {
   top: 30px;
   font-size: 2.76rem;
   transition: all 700ms ease;
+  white-space: nowrap;
 }
 .introWrap .introCon .introConLine {
   width: 1px;
@@ -191,6 +191,7 @@
   font-weight: 300;
   line-height: 30px;
   transition: all 700ms ease 500ms;
+  white-space: nowrap;
 }
 .introWrap img {
   width: 646px;
@@ -224,9 +225,11 @@
   cursor: pointer;
   transition: all 200ms ease;
 }
-.newWrap .newTitle .newTitleBtn:hover {
-  color: white;
-  background-color: #272727;
+@media (hover: hover) {
+  .newWrap .newTitle .newTitleBtn:hover {
+    color: white;
+    background-color: #272727;
+  }
 }
 .newWrap ul {
   width: 100%;
@@ -254,9 +257,11 @@
   opacity: 0;
   transition: all 300ms ease;
 }
-.newWrap ul li .newThumb:hover .newCartBtn {
-  bottom: 0;
-  opacity: 1;
+@media (hover: hover) {
+  .newWrap ul li .newThumb:hover .newCartBtn {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 .newWrap ul li .newThumb img {
   width: 100%;
@@ -298,8 +303,10 @@
   display: block;
   transition: all 300ms ease;
 }
-.bestWrap div:hover img {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .bestWrap div:hover img {
+    transform: scale(1.05);
+  }
 }
 .bestWrap div p {
   position: absolute;
@@ -310,43 +317,40 @@
   color: white;
 }
 
-/* Instagram */
-.instaWrap {
-  position: relative;
+/* Event */
+.eventWrap {
   padding: 100px 70px;
-  background-color: #F4F4F4;
 }
-.instaWrap .instaTitle {
-  margin-bottom: 50px;
-  text-align: center;
-}
-.instaWrap .instaTitle p:first-child {
-  color: #888;
-  font-weight: 300;
-  font-size: 1.077rem;
-}
-.instaWrap .instaTitle p:last-child {
-  font-size: 2.76rem;
-}
-.instaWrap .swiper2 .swiper-wrapper {
-  transition-timing-function: linear;
-}
-.instaWrap .swiper2 .swiper-wrapper .swiper-slide {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-use-select: none;
-  user-select: none;
+.eventWrap .eventBox {
+  position: relative;
   cursor: pointer;
+}
+.eventWrap .eventBox .eventMainImg, .eventWrap .eventBox .eventMiniImg {
+  width: 100%;
+  display: block;
+  filter: brightness(0.4);
   transition: all 300ms ease;
 }
-.instaWrap .swiper2 .swiper-scrollbar {
-  height: 1.5px;
-  position: static;
-  margin-top: 25px;
-  background-color: #ececec;
+.eventWrap .eventBox .eventMiniImg {
+  display: none;
 }
-.instaWrap .swiper2 .swiper-scrollbar span {
-  background-color: #888;
+.eventWrap .eventBox .eventTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.eventWrap .eventBox .eventTitle p {
+  text-align: center;
+  color: white;
+}
+.eventWrap .eventBox .eventTitle p:last-child {
+  font-size: 2.76rem;
+}
+@media (hover: hover) {
+  .eventWrap .eventBox:hover img {
+    filter: brightness(0.2);
+  }
 }
 
 /* Footer */
@@ -354,6 +358,7 @@
   padding: 56px 70px 100px 70px;
   display: flex;
   justify-content: space-between;
+  background-color: #F4F4F4;
 }
 .footerWrap .footBrand .brandLogo {
   width: 150px;
@@ -437,6 +442,183 @@
 }
 .footerWrap .footInfo .infoCompany .footCon {
   line-height: 27px;
+}
+
+/* Media Query */
+@media (max-width: 1441px) {
+  .footerWrap .footInfo .infoInter {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 1296px) {
+  .footerWrap {
+    flex-direction: column;
+  }
+  .footerWrap .footBrand {
+    margin-bottom: 56px;
+  }
+}
+@media (max-width: 1025px) {
+  * {
+    font-size: 12px;
+  }
+  .swiper-slide .slideContent p:nth-child(2) {
+    margin-bottom: 45px;
+  }
+  .swiper-slide .slideContent .slideMoreBtn {
+    width: 145px;
+    height: 45px;
+    line-height: 45px;
+  }
+  .newWrap ul li .newThumb .newCartBtn {
+    height: 40px;
+    line-height: 40px;
+  }
+  .footerWrap .footInfo {
+    flex-direction: column;
+  }
+  .footerWrap .footInfo .infoInter {
+    margin: 0 0 20px 0;
+  }
+}
+@media (max-width: 769px) {
+  * {
+    font-size: 11px;
+  }
+  .headerWrap {
+    height: 70px;
+    padding: 0 40px;
+  }
+  .headerWrap .headLogo img {
+    width: 150px;
+  }
+  .headerWrap .headCustomerMenu .customerIcon .cusSearch, .headerWrap .headCustomerMenu .customerIcon .cusCart {
+    margin-right: 20px;
+  }
+  .headerWrap .headCustomerMenu .customerLog {
+    display: none;
+  }
+  .swiper1 .swiper-slide .slideOriginImg {
+    display: none;
+  }
+  .swiper1 .swiper-slide .slideMiniImg {
+    display: block;
+  }
+  .swiper1 .swiper-slide .slideContent .slideMoreBtn {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .swiper1 .swiper-pagination {
+    bottom: 20px;
+  }
+  .swiper1 .swiper-pagination span {
+    width: 5px;
+    height: 5px;
+  }
+  .swiper1 .swiper-button-next, .swiper1 .swiper-button-prev {
+    background-size: 13px;
+  }
+  .swiper1 .swiper-button-prev {
+    left: 40px;
+  }
+  .swiper1 .swiper-button-next {
+    right: 40px;
+  }
+  .introWrap {
+    padding: 70px 40px;
+  }
+  .introWrap img {
+    width: 100%;
+  }
+  .newWrap {
+    padding: 70px 40px;
+  }
+  .newWrap ul {
+    flex-wrap: wrap;
+  }
+  .newWrap ul li {
+    width: 49%;
+  }
+  .newWrap ul li:nth-child(1), .newWrap ul li:nth-child(2) {
+    margin-bottom: 20px;
+  }
+  .newWrap .newTitle .newTitleBtn {
+    width: 100px;
+    height: 35px;
+    margin-bottom: 7px;
+    line-height: 35px;
+  }
+  .bestWrap {
+    flex-direction: column;
+  }
+  .bestWrap div {
+    width: 100%;
+  }
+  .eventWrap {
+    padding: 70px 40px;
+  }
+  .eventWrap .eventBox .eventMiniImg {
+    display: block;
+  }
+  .eventWrap .eventBox .eventMainImg {
+    display: none;
+  }
+  .footerWrap {
+    padding: 56px 40px 100px 40px;
+  }
+  .footerWrap .footInfo .footTitle {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 426px) {
+  * {
+    font-size: 9px;
+  }
+  .headerWrap {
+    padding: 0 20px;
+  }
+  .headerWrap .headMenu .headMenuText {
+    display: none;
+  }
+  .headerWrap .headCustomerMenu {
+    display: none;
+  }
+  .swiper1 .swiper-slide .slideContent p:nth-child(1) {
+    font-size: 3rem;
+  }
+  .swiper1 .swiper-button-next {
+    right: 20px;
+  }
+  .swiper1 .swiper-button-prev {
+    left: 20px;
+  }
+  .swiper1 .swiper-button-next, .swiper1 .swiper-button-prev {
+    background-size: 10px;
+  }
+  .introWrap {
+    padding: 50px 20px;
+  }
+  .introWrap .introCon {
+    margin-bottom: 30px;
+  }
+  .newWrap {
+    padding: 50px 20px;
+  }
+  .newWrap .newTitle .newTitleBtn {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .bestWrap div p {
+    bottom: 30px;
+  }
+  .eventWrap {
+    padding: 50px 20px;
+  }
+  .eventWrap .eventBox .eventTitle p:last-child {
+    font-size: 2rem;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
