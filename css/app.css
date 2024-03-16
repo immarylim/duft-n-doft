@@ -36,6 +36,8 @@
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+  -moz-backdrop-filter: blur(7px);
+  -o-backdrop-filter: blur(7px);
 }
 .headerWrap .headMenu {
   display: flex;
@@ -127,13 +129,15 @@
   color: white;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.2509803922);
   cursor: pointer;
 }
 
 .swiper1 {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .swiper1 .slideMiniImg {
   display: none;

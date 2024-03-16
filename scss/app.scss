@@ -46,6 +46,8 @@ $title-size: 2.76rem;
     background-color: #ffffffcc;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+    -o-backdrop-filter: blur(7px);
 
     .headMenu {
         display: flex;
@@ -159,6 +161,8 @@ $title-size: 2.76rem;
             color: white;
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
+            -moz-backdrop-filter: blur(5px);
+            -o-backdrop-filter: blur(5px);
             background-color: #ffffff40;
             cursor: pointer;
         }
@@ -167,7 +171,7 @@ $title-size: 2.76rem;
 
 .swiper1 {
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 
     .slideMiniImg {
         display: none;
