@@ -174,7 +174,6 @@
   background-color: #F4F4F4;
 }
 .introWrap .introCon {
-  height: 281px;
   position: relative;
   margin-bottom: 48px;
 }
@@ -206,7 +205,7 @@
 
 /* New Item */
 .newWrap {
-  padding: 100px 70px;
+  padding: 100px 70px 0 70px;
 }
 .newWrap .newTitle {
   margin-bottom: 50px;
@@ -326,7 +325,7 @@
 
 /* Event */
 .eventWrap {
-  padding: 100px 70px;
+  padding: 100px 0;
 }
 .eventWrap .eventBox {
   position: relative;
@@ -539,7 +538,7 @@
     width: 100%;
   }
   .newWrap {
-    padding: 70px 40px;
+    padding: 70px 40px 0 40px;
   }
   .newWrap ul {
     flex-wrap: wrap;
@@ -563,7 +562,7 @@
     width: 100%;
   }
   .eventWrap {
-    padding: 70px 40px;
+    padding: 70px 0;
   }
   .eventWrap .eventBox .eventMiniImg {
     display: block;
@@ -609,8 +608,15 @@
   .introWrap .introCon {
     margin-bottom: 30px;
   }
+  .introWrap .introCon .introConLine {
+    margin: 20px auto;
+  }
+  .introWrap .introCon .introDescript {
+    font-weight: 400;
+    line-height: 25px;
+  }
   .newWrap {
-    padding: 50px 20px;
+    padding: 50px 20px 0 20px;
   }
   .newWrap .newTitle .newTitleBtn {
     width: 80px;
@@ -621,7 +627,7 @@
     bottom: 30px;
   }
   .eventWrap {
-    padding: 50px 20px;
+    padding: 50px 0;
   }
   .eventWrap .eventBox .eventTitle p:last-child {
     font-size: 2rem;
