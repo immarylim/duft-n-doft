@@ -7,7 +7,8 @@
 
 /* Top */
 .top {
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: 100;
 }
@@ -26,6 +27,10 @@
 }
 
 /* Header */
+.headerWrap, .downMenuWrap {
+  background-color: white;
+}
+
 .headerWrap {
   height: 83px;
   padding: 0 70px;
@@ -33,16 +38,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  -moz-backdrop-filter: blur(7px);
-  -o-backdrop-filter: blur(7px);
 }
 .headerWrap .headMenu {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: all 300ms ease;
 }
 .headerWrap .headMenu .headMenuIcon {
   margin-right: 10px;
@@ -55,9 +56,24 @@
 .headerWrap .headMenu .headMenuIcon .menuTop, .headerWrap .headMenu .headMenuIcon .menuMiddle {
   margin-bottom: 4.5px;
 }
+.headerWrap .headMenu .headMenuIcon .menuTop, .headerWrap .headMenu .headMenuIcon .menuMiddle, .headerWrap .headMenu .headMenuIcon .menuBottom {
+  transition: all 300ms ease;
+}
 .headerWrap .headMenu .headMenuText {
   margin-bottom: 1px;
   font-size: 1.077rem;
+}
+.headerWrap .headMenu.active .menuTop {
+  width: 30px;
+  margin: 0;
+  transform: translateY(1px) rotate(45deg);
+}
+.headerWrap .headMenu.active .menuMiddle {
+  display: none;
+}
+.headerWrap .headMenu.active .menuBottom {
+  width: 30px;
+  transform: translateY(-1px) rotate(-45deg);
 }
 .headerWrap .headLogo {
   position: absolute;
@@ -80,6 +96,7 @@
 }
 .headerWrap .headCustomerMenu .customerLog .cusLogin, .headerWrap .headCustomerMenu .customerLog .cusJoin {
   color: #888;
+  transition: all 300ms ease;
 }
 .headerWrap .headCustomerMenu .customerLog .cusLogin:hover, .headerWrap .headCustomerMenu .customerLog .cusJoin:hover {
   color: #272727;
@@ -92,6 +109,42 @@
 }
 .headerWrap .headCustomerMenu .customerIcon .cusSearch, .headerWrap .headCustomerMenu .customerIcon .cusCart {
   margin-right: 28px;
+}
+
+.downMenuWrap {
+  position: relative;
+  padding-top: 20px;
+  display: none;
+}
+.downMenuWrap .downMenuMain {
+  text-align: center;
+}
+.downMenuWrap .downMenuMain li {
+  padding: 10px 0;
+}
+.downMenuWrap .downMenuMain li:last-child {
+  padding: 10px 0 50px 0;
+}
+.downMenuWrap .downMenuMain li a {
+  font-size: 1.5rem;
+  color: #888;
+  transition: all 300ms ease;
+}
+.downMenuWrap .downMenuMain li a:hover {
+  color: #272727;
+}
+.downMenuWrap .downMenuSub li {
+  display: none;
+}
+.downMenuWrap .downMenuSub li a {
+  font-size: 1.077rem;
+  color: #888;
+}
+
+/* Main */
+.main {
+  position: relative;
+  top: 117px;
 }
 
 /* Slide */
@@ -491,6 +544,9 @@
   * {
     font-size: 11px;
   }
+  .main {
+    top: 104px;
+  }
   .headerWrap {
     height: 70px;
     padding: 0 40px;
@@ -503,6 +559,24 @@
   }
   .headerWrap .headCustomerMenu .customerLog {
     display: none;
+  }
+  .downMenuWrap {
+    padding: 20px 40px 50px 40px;
+  }
+  .downMenuWrap .downMenuMain {
+    text-align: left;
+  }
+  .downMenuWrap .downMenuSub li:first-child {
+    display: block;
+  }
+  .downMenuWrap .downMenuSub li:first-child a:first-child, .downMenuWrap .downMenuSub li:first-child span {
+    margin-right: 8px;
+  }
+  .downMenuWrap .downMenuSub li:first-child a {
+    transition: all 300ms ease;
+  }
+  .downMenuWrap .downMenuSub li:first-child a:hover {
+    color: #272727;
   }
   .swiper1 .swiper-slide .slideOriginImg {
     display: none;
@@ -601,6 +675,16 @@
   }
   .swiper1 .swiper-button-next, .swiper1 .swiper-button-prev {
     background-size: 10px;
+  }
+  .downMenuWrap .downMenuSub li:first-child {
+    margin-bottom: 20px;
+  }
+  .downMenuWrap .downMenuSub li:nth-child(n+2) {
+    margin-right: 20px;
+    display: inline-block;
+  }
+  .downMenuWrap .downMenuSub li:nth-child(n+2) img {
+    width: 14px;
   }
   .introWrap {
     padding: 50px 20px;

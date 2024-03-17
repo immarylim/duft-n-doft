@@ -1,5 +1,3 @@
-$(() => {
-    $('.brandMenu').hover(() => {
-        $('.brandSubMenu').slideToggle('slow');
-    });
+$('.brandMenu').hover(() => {
+    $('.brandSubMenu').slideToggle('slow');
 });

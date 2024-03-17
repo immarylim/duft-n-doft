@@ -16,7 +16,8 @@ $title-size: 2.76rem;
 
 /* Top */
 .top {
-    position: sticky;
+    width: 100%;
+    position: fixed;
     top: 0;
     z-index: 100;
 }
@@ -36,6 +37,10 @@ $title-size: 2.76rem;
 }
 
 /* Header */
+.headerWrap, .downMenuWrap {
+    background-color: white;
+}
+
 .headerWrap {
     height: 83px;
     padding: 0 70px;
@@ -43,16 +48,12 @@ $title-size: 2.76rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffffcc;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    -moz-backdrop-filter: blur(7px);
-    -o-backdrop-filter: blur(7px);
 
     .headMenu {
         display: flex;
         align-items: center;
         cursor: pointer;
+        transition: all 300ms ease;
 
         .headMenuIcon {
             margin-right: 10px;
@@ -66,11 +67,32 @@ $title-size: 2.76rem;
             .menuTop, .menuMiddle {
                 margin-bottom: 4.5px;
             }
+
+            .menuTop, .menuMiddle, .menuBottom {
+                transition: all 300ms ease;
+            }
         }
 
         .headMenuText {
             margin-bottom: 1px;
             font-size: $menu-size;
+        }
+    }
+
+    .headMenu.active {
+        .menuTop {
+            width: 30px;
+            margin: 0;
+            transform: translateY(1px) rotate(45deg);
+        }
+
+        .menuMiddle {
+            display: none;
+        }
+
+        .menuBottom {
+            width: 30px;
+            transform: translateY(-1px) rotate(-45deg);
         }
     }
 
@@ -98,6 +120,7 @@ $title-size: 2.76rem;
 
             .cusLogin, .cusJoin {
                 color: $darkGray;
+                transition: all 300ms ease;
 
                 &:hover {
                     color: $main-color;
@@ -119,6 +142,51 @@ $title-size: 2.76rem;
             }
         }
     }
+}
+
+.downMenuWrap {
+    position: relative;
+    padding-top: 20px;
+    display: none;
+
+    .downMenuMain {
+        text-align: center;
+
+        li {
+            padding: 10px 0;
+
+            &:last-child {
+                padding: 10px 0 50px 0;
+            }
+            
+            a {
+                font-size: 1.5rem;
+                color: $darkGray;
+                transition: all 300ms ease;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+
+    .downMenuSub {
+        li {
+            display: none;
+
+            a {
+                font-size: $menu-size;
+                color: $darkGray;
+            }
+        }
+    }
+}
+
+/* Main */
+.main {
+    position: relative;
+    top: 117px;
 }
 
 /* Slide */
@@ -614,6 +682,10 @@ $title-size: 2.76rem;
         font-size: 11px;
     }
 
+    .main {
+        top: 104px;
+    }
+
     .headerWrap {
         height: 70px;
         padding: 0 40px;
@@ -631,6 +703,32 @@ $title-size: 2.76rem;
             
             .customerLog {
                 display: none;
+            }
+        }
+    }
+
+    .downMenuWrap {
+        padding: 20px 40px 50px 40px;
+
+        .downMenuMain {
+            text-align: left;
+        }
+
+        .downMenuSub {
+            li:first-child {
+                display: block;
+
+                a:first-child, span {
+                    margin-right: 8px;
+                }
+
+                a {
+                    transition: all 300ms ease;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
             }
         }
     }
@@ -768,6 +866,23 @@ $title-size: 2.76rem;
 
         .swiper-button-next, .swiper-button-prev {
             background-size: 10px;
+        }
+    }
+
+    .downMenuWrap .downMenuSub {
+        li {
+            &:first-child {
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(n+2) {
+                margin-right: 20px;
+                display: inline-block;
+
+                img {
+                    width: 14px;
+                }
+            }
         }
     }
 
