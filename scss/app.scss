@@ -305,7 +305,6 @@ $title-size: 2.76rem;
 
         .introDescript {
             bottom: -30px;
-            font-size: $menu-size;
             font-weight: 300;
             line-height: 30px;
             transition: all 700ms ease 500ms;
@@ -492,6 +491,10 @@ $title-size: 2.76rem;
             p {
                 text-align: center;
                 color: white;
+
+                &:first-child {
+                    font-size: $menu-size;
+                }
 
                 &:last-child {
                     font-size: $title-size;
@@ -836,7 +839,7 @@ $title-size: 2.76rem;
 
 @media (max-width: 426px) {
     * {
-        font-size: 9px;
+        font-size: 9.5px;
     }
 
     .headerWrap {
@@ -856,12 +859,8 @@ $title-size: 2.76rem;
             font-size: 3rem;
         }
 
-        .swiper-button-next {
-            right: 20px;
-        }
-
-        .swiper-button-prev {
-            left: 20px;
+        .swiper-button-next, .swiper-button-prev {
+            display: none;
         }
 
         .swiper-button-next, .swiper-button-prev {
@@ -922,6 +921,18 @@ $title-size: 2.76rem;
 
         .eventBox .eventTitle p:last-child {
             font-size: 2rem;
+        }
+    }
+
+    .footerWrap {
+        .footInfo {
+            .infoCustomer .footCon p:nth-child(3) {
+                line-height: 23px;
+            }
+
+            .infoCompany .footCon p {
+                line-height: 23px;
+            }
         }
     }
 }

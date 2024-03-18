@@ -246,7 +246,6 @@
 }
 .introWrap .introCon .introDescript {
   bottom: -30px;
-  font-size: 1.077rem;
   font-weight: 300;
   line-height: 30px;
   transition: all 700ms ease 500ms;
@@ -402,6 +401,9 @@
 .eventWrap .eventBox .eventTitle p {
   text-align: center;
   color: white;
+}
+.eventWrap .eventBox .eventTitle p:first-child {
+  font-size: 1.077rem;
 }
 .eventWrap .eventBox .eventTitle p:last-child {
   font-size: 2.76rem;
@@ -653,7 +655,7 @@
 }
 @media (max-width: 426px) {
   * {
-    font-size: 9px;
+    font-size: 9.5px;
   }
   .headerWrap {
     padding: 0 20px;
@@ -667,11 +669,8 @@
   .swiper1 .swiper-slide .slideContent p:nth-child(1) {
     font-size: 3rem;
   }
-  .swiper1 .swiper-button-next {
-    right: 20px;
-  }
-  .swiper1 .swiper-button-prev {
-    left: 20px;
+  .swiper1 .swiper-button-next, .swiper1 .swiper-button-prev {
+    display: none;
   }
   .swiper1 .swiper-button-next, .swiper1 .swiper-button-prev {
     background-size: 10px;
@@ -715,6 +714,12 @@
   }
   .eventWrap .eventBox .eventTitle p:last-child {
     font-size: 2rem;
+  }
+  .footerWrap .footInfo .infoCustomer .footCon p:nth-child(3) {
+    line-height: 23px;
+  }
+  .footerWrap .footInfo .infoCompany .footCon p {
+    line-height: 23px;
   }
 }
 
